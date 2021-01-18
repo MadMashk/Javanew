@@ -4,7 +4,8 @@ public class Task6 {
     static void run(){
         Scanner scanner=new Scanner(System.in);
         System.out.println("Enter number of elements");
-        int numbOfElements=scanner.nextInt();
+        int numbOfElements;
+        numbOfElements = scanner.nextInt();
         System.out.println("Enter max weight of bag");
         int maxBag=scanner.nextInt();
         int[] cost=new int[numbOfElements];
@@ -12,13 +13,14 @@ public class Task6 {
         int bestWay=0,maxWei=0;
         int bestCost=0;
         for(int i=0;i<numbOfElements;i++){
-            System.out.println("enter weight");
+            System.out.println("enter weight of "+(i+1)+" element");
             cost[i]=scanner.nextInt();
+            System.out.println("enter cost "+(i+1)+" element");
             wei[i]=scanner.nextInt();
             if(bestWay<cost[i]/wei[i])
                 bestWay=i;
             if(maxWei<wei[i])
-                bestWay=wei[i];
+                maxWei=wei[i];
 
         }
         while(maxBag>maxWei){
